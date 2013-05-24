@@ -3,6 +3,6 @@ class Movie < ActiveRecord::Base
 
   validates :title, :presence => true
 
-  has_many :casts
-  has_many :actors, :through => :casts
+  has_many :cast, :class_name => 'Cast'
+  has_many :actors, :through => :cast
 end
