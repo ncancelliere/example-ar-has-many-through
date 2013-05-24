@@ -1,0 +1,19 @@
+= form_for @cast do |f|
+  - if @cast.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@cast.errors.count, "error")} prohibited this cast from being saved:"
+      %ul
+        - @cast.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :movie
+    = f.text_field :movie
+  .field
+    = f.label :actor
+    = f.text_field :actor
+  .field
+    = f.label :character
+    = f.text_field :character
+  .actions
+    = f.submit 'Save'

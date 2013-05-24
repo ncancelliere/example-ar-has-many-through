@@ -1,0 +1,23 @@
+%h1 Listing casts
+
+%table
+  %tr
+    %th Movie
+    %th Actor
+    %th Character
+    %th
+    %th
+    %th
+
+  - @casts.each do |cast|
+    %tr
+      %td= cast.movie
+      %td= cast.actor
+      %td= cast.character
+      %td= link_to 'Show', cast
+      %td= link_to 'Edit', edit_cast_path(cast)
+      %td= link_to 'Destroy', cast, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Cast', new_cast_path

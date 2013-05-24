@@ -1,0 +1,25 @@
+%h1 Listing actors
+
+%table
+  %tr
+    %th Name
+    %th Gender
+    %th Date of birth
+    %th Date of death
+    %th
+    %th
+    %th
+
+  - @actors.each do |actor|
+    %tr
+      %td= actor.name
+      %td= actor.gender
+      %td= actor.date_of_birth
+      %td= actor.date_of_death
+      %td= link_to 'Show', actor
+      %td= link_to 'Edit', edit_actor_path(actor)
+      %td= link_to 'Destroy', actor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Actor', new_actor_path

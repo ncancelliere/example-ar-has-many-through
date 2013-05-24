@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @actor.name
+%p
+  %b Gender:
+  = @actor.gender
+%p
+  %b Date of birth:
+  = @actor.date_of_birth
+%p
+  %b Date of death:
+  = @actor.date_of_death
+
+= link_to 'Edit', edit_actor_path(@actor)
+\|
+= link_to 'Back', actors_path
