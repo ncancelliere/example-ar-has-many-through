@@ -3,5 +3,7 @@ class Actor < ActiveRecord::Base
 
   validates :name, :presence => true
 
-  has_many :movies
+  has_many :movies, :through => :casts
+  has_many :casts
+
 end
